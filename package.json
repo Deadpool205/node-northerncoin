@@ -1,0 +1,23 @@
+{
+  "name": "@Deadpool205/node-sinovatecoin",
+  "version": "0.1.2",
+  "description": "Sinovate RPC Node Client",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "main": "./sinovate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Deadpool205/node-sinovatecoin.git"
+  },
+  "keywords": [
+    "Sinovate"
+  ],
+  "author": "Deadpool205",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Deadpool205/node-sinovate/issues"
+  },
+  "homepage": "https://github.com/Deadpool205/node-sinovatecoin"
+}
