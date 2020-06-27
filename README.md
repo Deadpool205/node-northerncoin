@@ -1,37 +1,37 @@
-# A Node.js Sinovate Client!
+# A Node.js northerncoin Client!
 
 
             
 
 
-node-sinovate is a Sinovate client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with Sinovate. The purpose of this repository is:
+node-northerncoin is a northerncoin client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with northerncoin. The purpose of this repository is:
 
-* Provide a one-stop resource for the Node.js developer to get started with Sinovate integration.
-* Promote Node.js development of Sinovate web apps.
-* Identify and address any incompatibilities with the Sinovate and Bitcoin APIs that exist now and/or in the future.
+* Provide a one-stop resource for the Node.js developer to get started with northerncoin integration.
+* Promote Node.js development of northerncoin web apps.
+* Identify and address any incompatibilities with the northerncoin and Bitcoin APIs that exist now and/or in the future.
 
 ## Dependencies
 
-You'll need a running instance of a [Sincoind](https://github.com/SINOVATEblockchain/SIN-core.git) to connect with. 
+You'll need a running instance of a [Sincoind](https://github.com/northerncoinblockchain/SIN-core.git) to connect with. 
 
-Then, install the node-sinovate NPM package.
+Then, install the node-northerncoin NPM package.
 
-`npm install node-sinovate`
+`npm install node-northerncoin`
 
 or
 
-`npm install git://github.com/Deadpool205/node-sinovate/`
+`npm install git://github.com/Deadpool205/node-northerncoin/`
 
 ## Examples
 
 Some code examples follow below.
 
 ```js
-var sinovate = require('node-sinovate')()
+var northerncoin = require('node-northerncoin')()
 
-sinovate.auth('myusername', 'mypassword')
+northerncoin.auth('myusername', 'mypassword')
 
-sinovate.getDifficulty(function() {
+northerncoin.getDifficulty(function() {
     console.log(arguments);
 })
 
@@ -42,9 +42,9 @@ sinovate.getDifficulty(function() {
 Pretty much everything is chainable.
 
 ```js
-var sinovate = require('node-sinovate')()
+var northerncoin = require('node-northerncoin')()
 
-sinovate
+northerncoin
 .auth('MyUserName', 'mypassword')
 .getNewAddress()
 .getBalance()
@@ -53,7 +53,7 @@ sinovate
 ## Methods
 
 ```js
-sinovate.getNewAddress(function(err, address) {
+northerncoin.getNewAddress(function(err, address) {
     this.validateaddress(address, function(err, info) {
 
     })
@@ -65,9 +65,9 @@ Executes the given command with optional arguments. Function `callback` defaults
 All of the API commands are supported in lowercase or camelcase. Or uppercase. Anycase!
 
 ```js
-sinovate.exec('getNewAddress')
+northerncoin.exec('getNewAddress')
 
-sinovate.exec('getbalance', function(err, balance) {
+northerncoin.exec('getbalance', function(err, balance) {
 
 })
 ```
@@ -77,7 +77,7 @@ sinovate.exec('getbalance', function(err, balance) {
 Accepts either key & value strings or an Object containing settings, returns `this` for chainability.
 
 ```js
-sinovate.set('host', '127.0.0.1')
+northerncoin.set('host', '127.0.0.1')
 ```
 
 ### .get(key [string])
@@ -85,7 +85,7 @@ sinovate.set('host', '127.0.0.1')
 Returns the specified option's value
 
 ```js
-sinovate.get('user')
+northerncoin.get('user')
 ```
 
 ### .auth(user [string], pass [string])
@@ -94,7 +94,7 @@ Generates authorization header, returns `this` for chainability
 
 ## Commands
 
-All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowercase or camelcase form.
+All [northerncoin API](http://api.astra-coin.com) commands are supported, in lowercase or camelcase form.
 
 <table>
 <tr>
@@ -106,7 +106,7 @@ All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowerca
 <tr>
 <td> addmultisigaddress </td>
 <td> [nrequired] ["key","key"] [account] </td>
-<td> <b>Currently only available on Mainnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a sinovate address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
+<td> <b>Currently only available on Mainnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a northerncoin address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -117,8 +117,8 @@ All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowerca
 </td></tr>
 <tr>
 <td> dumpprivkey </td>
-<td> [sinovateaddress] </td>
-<td> Reveals the private key corresponding to <sinovateaddress< </td>
+<td> [northerncoinaddress] </td>
+<td> Reveals the private key corresponding to <northerncoinaddress< </td>
 <td> Y
 </td></tr>
 <tr>
@@ -129,14 +129,14 @@ All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowerca
 </td></tr>
 <tr>
 <td> getaccount </td>
-<td> [sinovateaddress] </td>
+<td> [northerncoinaddress] </td>
 <td> Returns the account associated with the given address. </td>
 <td> N
 </td></tr>
 <tr>
 <td> getaccountaddress </td>
 <td> [account] </td>
-<td> Returns the current sinovate address for receiving payments to this account. </td>
+<td> Returns the current northerncoin address for receiving payments to this account. </td>
 <td> N
 </td></tr>
 <tr>
@@ -190,7 +190,7 @@ All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowerca
 <tr>
 <td> getgenerate </td>
 <td> </td>
-<td> Returns true or false whether sinovated is currently generating hashes </td>
+<td> Returns true or false whether northerncoind is currently generating hashes </td>
 <td> N
 </td></tr>
 <tr>
@@ -253,8 +253,8 @@ All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowerca
 </td></tr>
 <tr>
 <td> getreceivedbyaddress </td>
-<td> [sinovateaddress] [minconf=1] </td>
-<td> Returns the total amount received by <sinovateaddress< in transactions with at least [minconf] confirmations. While some might consider this obvious, value reported by this only considers *receiving* transactions. It does not check payments that have been made *from* this address. In other words, this is not "getaddressbalance". Works only for addresses in the local wallet, external addresses will always show 0. </td>
+<td> [northerncoinaddress] [minconf=1] </td>
+<td> Returns the total amount received by <northerncoinaddress< in transactions with at least [minconf] confirmations. While some might consider this obvious, value reported by this only considers *receiving* transactions. It does not check payments that have been made *from* this address. In other words, this is not "getaddressbalance". Works only for addresses in the local wallet, external addresses will always show 0. </td>
 <td> N
 </td></tr>
 <tr>
@@ -297,7 +297,7 @@ All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowerca
 </td></tr>
 <tr>
 <td> importprivkey </td>
-<td> [sinovateprivkey] [label] </td>
+<td> [northerncoinprivkey] [label] </td>
 <td> Adds a private key (as returned by dumpprivkey) to your wallet. </td>
 <td> Y
 </td></tr>
@@ -333,7 +333,7 @@ All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowerca
 </li><li> "amount": total amount received by the address
 </li><li> "confirmations": number of confirmations of the most recent transaction included
 </li></ul>
-<p>To get a list of accounts on the system, execute sinovated listreceivedbyaddress 0 true
+<p>To get a list of accounts on the system, execute northerncoind listreceivedbyaddress 0 true
 </p>
 </td>
 <td> N
@@ -371,13 +371,13 @@ All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowerca
 </td></tr>
 <tr>
 <td> sendtoaddress </td>
-<td> [sinovateaddress] [amount] [comment] [comment-to] </td>
+<td> [northerncoinaddress] [amount] [comment] [comment-to] </td>
 <td> <amount< is a real and is rounded to 8 decimal places. Returns the transaction ID <txid< if successful. </td>
 <td> Y
 </td></tr>
 <tr>
 <td> setaccount </td>
-<td> [sinovateaddress] [account] </td>
+<td> [northerncoinaddress] [account] </td>
 <td> Sets the account associated with the given address. Assigning address that is already assigned to the same account will create a new address associated with that account. </td>
 <td> N
 </td></tr>
@@ -391,7 +391,7 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 </td></tr>
 <tr>
 <td> signmessage </td>
-<td> [sinovateaddress] [message] </td>
+<td> [northerncoinaddress] [message] </td>
 <td> Sign a message with the private key of an address. </td>
 <td> Y
 </td></tr>
@@ -404,18 +404,18 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 <tr>
 <td> stop </td>
 <td> </td>
-<td> Stop sinovate server. </td>
+<td> Stop northerncoin server. </td>
 <td> N
 </td></tr>
 <tr>
 <td> validateaddress </td>
 <td> [astracoinaddress] </td>
-<td> Return information about [sinovateaddress]. </td>
+<td> Return information about [northerncoinaddress]. </td>
 <td> N
 </td></tr>
 <tr>
 <td> verifymessage </td>
-<td> [sinovateaddress] [signature] [message] </td>
+<td> [northerncoinaddress] [signature] [message] </td>
 <td> Verify a signed message. </td>
 <td> N
 </td></tr>
@@ -444,12 +444,12 @@ You may pass options to the initialization function or to the `set` method.
 
 ```js
 
-var sinovate = require('astracoin')({
+var northerncoin = require('astracoin')({
     user:'user'
 })
 
-sinovate.set('pass', 'somn')
-sinovate.set({port:7142})
+northerncoin.set('pass', 'somn')
+northerncoin.set({port:7142})
 
 ```
 
@@ -467,7 +467,7 @@ Available options and default values:
 
 With an encryped wallet, any operation that accesses private keys requires a wallet unlock. A wallet is unlocked using the `walletpassphrase <passphrase> <timeout>` JSON-RPC method: the wallet will relock after `timeout` seconds.
 
-You may pass an optional function `passphrasecallback` to the `node-sinovate` initialization function to manage wallet unlocks. `passphrasecallback` should be a function accepting three arguments:
+You may pass an optional function `passphrasecallback` to the `node-northerncoin` initialization function to manage wallet unlocks. `passphrasecallback` should be a function accepting three arguments:
 
     function(command, args, callback) {}
 
@@ -478,7 +478,7 @@ You may pass an optional function `passphrasecallback` to the `node-sinovate` in
 You may hard code your passphrase (not recommended) as follows:
 
 ```js
-var sinovate = require('node-astracoin')({
+var northerncoin = require('node-astracoin')({
     passphrasecallback: function(command, args, callback) {
         callback(null, 'passphrase', 30);
     }
@@ -495,7 +495,7 @@ var rl = readline.createInterface({
   output: process.stdout
 })
 
-var sinovate = require('node-sinovate')({
+var northerncoin = require('node-northerncoin')({
   passphrasecallback: function(command, args, callback) {
     rl.question('Enter passphrase for "' + command + '" operation: ', function(passphrase) {
       if (passphrase) {
@@ -510,20 +510,20 @@ var sinovate = require('node-sinovate')({
 
 ### Secure RPC with SSL
 
-By default `sinovated` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `sinovated` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `sinovate.conf`:
+By default `northerncoind` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `northerncoind` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `northerncoin.conf`:
 
     rpcssl=1
-    rpcsslcertificatechainfile=/etc/ssl/certs/sinovated.crt
-    rpcsslprivatekeyfile=/etc/ssl/private/sinovated.pem
+    rpcsslcertificatechainfile=/etc/ssl/certs/northerncoind.crt
+    rpcsslprivatekeyfile=/etc/ssl/private/northerncoind.pem
 
-In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `sinovated.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-astracoin is secured!
+In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `northerncoind.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-astracoin is secured!
     
 ```js
 var fs = require('fs')
 
-var ca = fs.readFileSync('sinovated.crt')
+var ca = fs.readFileSync('northerncoind.crt')
 
-var sinovate = require('node-sinovate')({
+var northerncoin = require('node-northerncoin')({
   user: 'rpcusername',
   pass: 'rpcpassword',
   https: true,
