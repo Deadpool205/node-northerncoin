@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Deadpool205/node-northerncoin.git"
+    "url": "https://github.com/northern-community/Northern.git"
   },
   "keywords": [
     "northerncoin"
